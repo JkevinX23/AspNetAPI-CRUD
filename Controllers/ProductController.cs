@@ -25,7 +25,9 @@ namespace crudef.Controllers
             [FromServices] DataContext context,
             int id)
         {
-           var product = await context.Products.Include(x => x.Category).FirstOrDefaultAsync(x => x.Id == id ); 
+           var product = await context.Products.Include(x => x.Category)
+            .AsNoTracking()
+            .FirstOrDefaultAsync(x => x.Id == id ); 
             return product;
         }
     }
