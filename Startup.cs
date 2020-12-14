@@ -48,7 +48,6 @@ namespace crudef
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "crudef v1"));
             }
 
-            app.UseHttpsRedirection();
 
             app.UseRouting();
 
